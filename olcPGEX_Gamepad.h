@@ -662,12 +662,10 @@ void olc::GamePad::poll() {
 			};
 
 			for (int i = 0; i < sizeof(buttonCodes) / sizeof(int32_t); i++) {
-				std::cout << "Event code: " << event.code << '\n';
 				if (event.code == buttonCodes[i]) {
 					bool pressed = event.value;
 					handleButton(i, pressed);
 
-					std::cout << "Button id: " << i << "\n";
 
 					if (i >= 14) {
 						if (i == 14)
